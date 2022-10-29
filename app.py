@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return '<h1>Hello World</<h1>'
 
+@app.route('/home')
+def home():
+    return '<h1>You are home</<h1>'
+
 # one way to run flask app:
 if __name__ == '__main__':
     app.run()

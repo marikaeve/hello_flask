@@ -8,9 +8,10 @@ app = Flask(__name__)
 def index():
     return '<h1>Hello World</<h1>'
 
-@app.route('/home')
-def home():
-    return '<h1>You are home</<h1>'
+@app.route('/home', methods=['POST', 'GET'], defaults={'name': 'Default'})
+@app.route('/home/<string:name>', methods=['POST', 'GET'])
+def home(name):
+    return f'<h1>Hello {name}, you are on the home page</<h1>'
 
 @app.route('/json')
 def json():

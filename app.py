@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 
 app = Flask(__name__)
@@ -11,6 +11,10 @@ def index():
 @app.route('/home')
 def home():
     return '<h1>You are home</<h1>'
+
+@app.route('/json')
+def json():
+    return jsonify({'key': 'value', 'key2': [1, 2, 3]})
 
 # one way to run flask app:
 if __name__ == '__main__':

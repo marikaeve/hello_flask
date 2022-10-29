@@ -18,7 +18,7 @@ def json():
 
 # one way to run flask app:
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 # other way is to run command flask run on command line
 # (export FLASK_APP=app.py)
